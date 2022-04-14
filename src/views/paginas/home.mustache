@@ -1,0 +1,46 @@
+{{>parcial/header}}
+
+    <p>Bem vindo, Sr(a) <strong> {{user.nome}} </strong></p>
+    <p>Idade: {{idade}}</p>
+    {{#mostrarIdade}}
+        <p>Você é maior de idade</p>
+    {{/mostrarIdade}}
+    {{^mostrarIdade}}
+        <p>Você é menor de idade</p>
+    {{/mostrarIdade}}
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci suscipit sint dolorum quisquam tempora libero,
+    nobis amet optio voluptatem natus odit praesentium earum magni temporibus rem nulla fugit eligendi ab.
+    <hr>
+
+    <h2>Lista de produtos</h2>
+    <ul>
+    {{#produtos}}
+        {{>parcial/itemProdutos}}
+    {{/produtos}}
+    </ul>
+    <hr>
+
+    <h2>Lista de produtos a partir de R$ 15</h2>
+    <ul>
+    {{#caros}}
+        {{>parcial/itemProdutos}}
+    {{/caros}}
+    </ul>
+    <hr>
+
+    <h2>Lista de produtos menor de R$ 10</h2>
+    <ul>
+    {{#baratos}}
+        {{>parcial/itemProdutos}}
+    {{/baratos}}
+    </ul>
+    <hr>
+
+    <h2>Frases do dia</h2>
+    <ul>
+    {{#frases}}
+        <li>{{.}}</li>
+    {{/frases}}
+    </ul>
+
+{{>parcial/rodape}}
